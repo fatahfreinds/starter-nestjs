@@ -1,0 +1,24 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CategoryDTO {
+  id: ID!
+  name: String!
+}
+
+type BookDTO {
+  id: ID!
+  title: String!
+  category: CategoryDTO!
+}
+
+type Query {
+  hello: String!
+  categories: [CategoryDTO!]!
+  booksByCategory(categoryId: String!): [BookDTO!]!
+}
+
+type Mutation {
+  addBookToCategory(categoryId: String!, title: String!): BookDTO!
+}
